@@ -24,16 +24,21 @@ This inventory provides a quick overview of all the specialized skill files avai
    - Backend Best Practices
    - API Design
    - System Design (Architecture)
+   - Advanced Architectural Patterns (EDA, Micro-frontends)
    - Cloud Computing
    - DevOps Rules
    - SRE & Reliability
    - Linux & Bash Scripting
    - Docker & Kubernetes (Containerization)
+   - Infrastructure as Code (IaC)
    - Networking & Protocols
 6. **Data & AI**
    - Data Engineering
+   - Real-time Data Streaming (Kafka/Spark)
    - Data Science & Analytics
    - AI & Machine Learning
+   - Computer Vision
+   - NLP & LLM Engineering
    - Ethical AI & AI Safety
 7. **Specialized & Emerging Domains**
    - Mobile Development
@@ -73,16 +78,21 @@ This inventory provides a quick overview of all the specialized skill files avai
    - أفضل ممارسات الأنظمة الخلفية
    - تصميم الـ API
    - تصميم الأنظمة (المعمارية)
+   - الأنماط المعمارية المتقدمة (EDA, Micro-frontends)
    - الحوسبة السحابية
    - قواعد DevOps
    - هندسة الموثوقية (SRE)
    - لينكس وبرمجة الشل
    - دوكر وكوبيرنيتيس (الحاويات)
+   - البنية التحتية كشيفرة (IaC)
    - الشبكات والبروتوكولات
 6. **البيانات والذكاء الاصطناعي**
    - هندسة البيانات
+   - تدفق البيانات اللحظي (Kafka/Spark)
    - علوم البيانات والتحليل
    - الذكاء الاصطناعي وتعلم الآلة
+   - رؤية الحاسوب (Computer Vision)
+   - هندسة الـ NLP والنماذج اللغوية
    - أخلاقيات وأمان الذكاء الاصطناعي
 7. **المجالات المتخصصة والناشئة**
    - تطوير تطبيقات الجوال
