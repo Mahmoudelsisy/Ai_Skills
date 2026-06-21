@@ -1,26 +1,30 @@
-# Python Professional Standards | معايير بايثون الاحترافية
+# Enterprise Python Mastery | احتراف لغة بايثون للمشاريع الكبرى
 
 ## Arabic Description | وصف بالعربية
-هذا الملف يحدد القواعد الصارمة لكتابة كود بايثون احترافي. يركز على النوعية (Type Hinting)، التنسيق القياسي (PEP 8)، وكفاءة الأداء.
+قواعد برمجية متقدمة لاحتراف لغة بايثون في الأنظمة الضخمة. تغطي القواعد إدارة الذاكرة، الأداء العالي، البرمجة المتزامنة المتقدمة، وأنماط التصميم الخاصة ببايثون.
 
 ---
 
 ## Strict Rules | قواعد صارمة
 
-### 1. Type Hinting
-- **Mandatory Typing**: ALL function signatures MUST have type hints for parameters and return values.
-- **No `Any`**: Avoid using `Any` unless absolutely necessary. Use `Union`, `Optional`, or generics.
+### 1. Advanced Type System
+- **Static Analysis**: ALL code MUST pass `mypy` strict mode. Use `Protocol` for structural subtyping and `TypeVar` for generics.
+- **Data Integrity**: Use `Pydantic` or `dataclasses` with slots for structured data to ensure validation and memory efficiency.
 
-### 2. Standards (PEP 8)
-- **Compliance**: Follow PEP 8 strictly (indentation, spacing, naming conventions).
-- **Naming**: Use `snake_case` for functions/variables and `PascalCase` for classes.
+### 2. High Performance & Memory
+- **Memory Efficiency**: Use `__slots__` in classes with many instances. Leverage `generators` and `iterators` for processing large datasets to keep memory footprint low.
+- **Profiling & Optimization**: Use `cProfile` and `line_profiler` to identify bottlenecks. Move performance-critical logic to `Cython` or specialized libraries like `NumPy/Pandas` if pure Python is too slow.
 
-### 3. Asynchronous Programming
-- **Async/Await**: Use `asyncio` for I/O bound tasks. Avoid blocking calls in async functions.
+### 3. Advanced Concurrency
+- **AsyncIO Mastery**: Avoid "poisoning" the event loop with blocking calls. Use `run_in_executor` for CPU-bound tasks or legacy blocking I/O.
+- **Multiprocessing**: Use `multiprocessing` for true CPU parallelism to bypass the Global Interpreter Lock (GIL) when necessary.
+- **Task Management**: Use `asyncio.TaskGroup` (Python 3.11+) or `gather` for structured concurrency.
 
-### 4. Dependency Management
-- **Explicit Imports**: Avoid `from module import *`. Be explicit.
-- **Virtual Environments**: Always use `venv` or `poetry`.
+### 4. Enterprise Patterns & Tooling
+- **Dependency Injection**: Use dependency injection frameworks (e.g., `dependency-injector`) to manage complex object graphs and improve testability.
+- **Packaging**: Use `Poetry` or `uv` for modern dependency management and deterministic builds.
+- **Plugin Architecture**: Use `entry_points` or dynamic imports to build extensible, plugin-based systems.
 
-### 5. Testing
-- **Pytest**: Use `pytest` for testing. Aim for 80%+ coverage.
+### 5. Testing & Observability
+- **Property-Based Testing**: Use `Hypothesis` for testing edge cases that manual unit tests might miss.
+- **Structured Instrumentation**: Use `structlog` for structured logging and integrate with OpenTelemetry for distributed tracing.

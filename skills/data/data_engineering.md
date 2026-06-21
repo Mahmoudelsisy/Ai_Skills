@@ -1,29 +1,31 @@
-# Data Engineering & Database Management | هندسة البيانات وإدارة قواعد البيانات
+# High-Scale Database Engineering | هندسة قواعد البيانات للأنظمة الضخمة
 
 ## Arabic Description | وصف بالعربية
-قواعد صارمة لإدارة البيانات، تصميم الجداول، وبناء أنابيب البيانات (Data Pipelines). تضمن هذه القواعد دقة البيانات، سرعتها، وسهولة الوصول إليها.
+قواعد هندسية متقدمة لإدارة قواعد البيانات في الأنظمة العملاقة. تغطي القواعد التحسينات على مستوى المحرك (Database Internals)، أنواع الفهارس المتقدمة، نمذجة NoSQL للمشاريع الكبرى، واستراتيجيات ترحيل البيانات بدون توقف (Zero-downtime migrations).
 
 ---
 
 ## Strict Rules | قواعد صارمة
 
-### 1. Data Modeling
-- **Normalization**: Use 3NF (Third Normal Form) for relational databases unless denormalization is required for performance.
-- **Schema Design**: Always define clear schemas for NoSQL databases (e.g., using Mongoose for MongoDB) to maintain data integrity.
+### 1. Advanced SQL & Relational Mastery
+- **Indexing Strategy**: Use specific index types (B-Tree, GIN, GiST, BRIN) based on the query pattern. Avoid over-indexing as it degrades write performance.
+- **Window Functions**: Use Window Functions (`OVER`, `PARTITION BY`) for complex analytical queries instead of inefficient self-joins.
+- **CTE Usage**: Use Common Table Expressions (CTEs) for readability, but be mindful of "materialization" overhead in older database versions.
 
-### 2. SQL Optimization
-- **Query Performance**: NEVER use `SELECT *`. Always select specific columns.
-- **Explain Plans**: Use `EXPLAIN` to analyze and optimize slow queries.
-- **Transactions**: Use ACID transactions for operations that modify multiple related tables.
+### 2. NoSQL Modeling at Scale
+- **Single Table Design**: In DynamoDB/Key-Value stores, prioritize Single Table Design to minimize round-trips and leverage GSIs (Global Secondary Indexes) effectively.
+- **Denormalization for Reads**: In high-scale NoSQL, denormalize data to match the "Read Query" pattern, ensuring data consistency is handled at the application layer or via background jobs.
 
-### 3. Data Pipelines (ETL/ELT)
-- **Idempotency**: All data processing steps MUST be idempotent (running the same step twice should not duplicate data).
-- **Failure Recovery**: Implement retries and dead-letter queues for failed pipeline stages.
+### 3. High Availability & Scalability
+- **Sharding & Partitioning**: Implement application-level or database-native sharding (e.g., Citus for Postgres) for datasets exceeding several terabytes.
+- **Read Replicas**: Separate Read/Write traffic. Use a load balancer to distribute read queries across multiple read replicas.
+- **Connection Multiplexing**: Use tools like `PgBouncer` to manage thousands of concurrent connections efficiently.
 
-### 4. Data Privacy & Security
-- **PII Protection**: Mask or encrypt Personally Identifiable Information (PII) at all times.
-- **Access Control**: Implement Row-Level Security (RLS) if the database supports it and is required by business logic.
+### 4. Zero-Downtime Operations
+- **Migrations**: Database schema changes MUST follow the **Expand/Contract** pattern: 1. Add new column, 2. Dual write, 3. Backfill data, 4. Update reads to new column, 5. Stop writing to old column, 6. Remove old column.
+- **Lock Management**: Avoid operations that lock large tables (e.g., adding a column with a default value in older versions). Use specialized tools like `gh-ost` or `pt-online-schema-change`.
 
-### 5. Big Data & Warehousing
-- **Partitioning**: Partition large tables by date or logical keys to improve query speed.
-- **Compression**: Use columnar storage and compression for analytical workloads (OLAP).
+### 5. Performance & Internals
+- **Vacuum & Maintenance**: Understand and tune database-specific maintenance (e.g., Autovacuum in Postgres, Compaction in Cassandra).
+- **Execution Plan Analysis**: Regularly audit slow queries. Look beyond just indexes; check for "Seq Scans," "Temp Sorts," and "Nested Loops."
+- **Pool Sizing**: Optimize connection pool sizes based on database CPU cores and I/O capacity to prevent "Connection Bloat."

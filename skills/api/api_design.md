@@ -1,29 +1,33 @@
-# API Design & Communication | تصميم الـ API والاتصالات
+# Expert API Engineering & Integration | هندسة الـ API والربط البرمجي المتقدم
 
 ## Arabic Description | وصف بالعربية
-قواعد تصميم الـ APIs بطريقة احترافية، تضمن السهولة في الاستخدام، الأداء العالي، والتوافقية.
+قواعد هندسية متقدمة لتصميم وتطوير الـ APIs للأنظمة الضخمة. تغطي القواعد أنماط REST, GraphQL Federation, gRPC، بالإضافة إلى موثوقية الـ Webhooks، مفاتيح التكرار (Idempotency)، واستراتيجيات الإصدارات المعقدة.
 
 ---
 
 ## Strict Rules | قواعد صارمة
 
-### 1. RESTful Standards
-- **HTTP Methods**: Use GET for retrieval, POST for creation, PUT/PATCH for updates, and DELETE for removal.
-- **Resource Naming**: Use plural nouns for endpoints (e.g., `/users`, not `/getUser`).
-- **Status Codes**: Return appropriate HTTP status codes (200 OK, 201 Created, 400 Bad Request, 401 Unauthorized, 404 Not Found, 500 Error).
+### 1. Advanced Protocol Selection
+- **gRPC for Internal**: Use gRPC (Protocol Buffers) for high-performance, low-latency inter-service communication. Enforce strict schema evolution rules.
+- **GraphQL Federation**: Use Apollo Federation or similar to unify multiple microservice graphs into a single entry point for frontends. Prevent "N+1" problems using Dataloaders.
+- **REST for Public**: Maintain REST for public-facing APIs, following strict Richardson Maturity Model Level 3 (HATEOAS) where beneficial.
 
-### 2. Documentation
-- **OpenAPI/Swagger**: Every API MUST have a Swagger/OpenAPI specification.
-- **Clear Examples**: Provide request and response examples in the documentation.
+### 2. Reliability & Idempotency
+- **Idempotency Keys**: All state-changing operations (POST/PATCH) MUST support an `Idempotency-Key` header to safely allow client retries.
+- **Webhook Reliability**: Implement an exponential backoff retry policy for outgoing Webhooks. Use a message queue to ensure Webhook delivery even if the receiver is temporarily down.
+- **Signature Verification**: All incoming and outgoing Webhooks MUST be signed (HMAC-SHA256) to ensure authenticity and integrity.
 
-### 3. Versioning
-- **URL Versioning**: Use versioning in the URL (e.g., `/api/v1/resource`).
+### 3. Advanced Versioning & Compatibility
+- **Header-based Versioning**: Support versioning through custom headers (e.g., `Accept: application/vnd.api.v2+json`) for more flexible evolution.
+- **Breaking Changes Policy**: Never remove fields or change types in a minor version. Use "Sunset" headers to notify clients of upcoming deprecations.
+- **Shadow Mirroring**: Use "Traffic Shadowing" (Mirroring) to test new API versions with real production traffic before full release.
 
-### 4. Performance & Reliability
-- **Pagination**: Implement pagination for all list endpoints.
-- **Rate Limiting**: Apply rate limiting to prevent abuse.
-- **Timeouts**: Always set timeouts for outgoing API calls.
+### 4. Performance & Traffic Management
+- **Adaptive Throttling**: Implement rate limiting based on client tiers and current system health (Shedding load when near capacity).
+- **Partial Responses**: Support `fields` query parameters to allow clients to request only the data they need, reducing payload size.
+- **Caching Policies**: Use `ETag` and `Last-Modified` headers for fine-grained cache control.
 
-### 5. Security
-- **HTTPS Only**: All API communication MUST be over HTTPS.
-- **CORS**: Configure Cross-Origin Resource Sharing (CORS) strictly.
+### 5. Security & Governance (Enterprise)
+- **Scopes & Permissions**: Use fine-grained OAuth2 Scopes. Never rely on simple "Admin" booleans.
+- **API Gateway Governance**: All APIs MUST go through a centralized gateway for consistent Authentication, Logging, and Schema Validation.
+- **Input Sanitization**: Use strict schema validation (JSON Schema/Zod) for ALL incoming payloads at the gateway level.

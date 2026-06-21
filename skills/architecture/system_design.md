@@ -1,28 +1,32 @@
-# Software Architecture & System Design | معمارية البرمجيات وتصميم الأنظمة
+# Enterprise System Design & Architecture | معمارية وتصميم الأنظمة الكبرى
 
 ## Arabic Description | وصف بالعربية
-قواعد معمارية البرمجيات لضمان بناء أنظمة قابلة للتوسع (Scalable) وقوية (Robust). تغطي الأنماط الشائعة وتقسيم المكونات.
+معايير معمارية متقدمة لتصميم أنظمة برمجية ضخمة (Enterprise Architecture). تغطي القواعد أنماط التصميم الموزعة، التوافر العالي، واستراتيجيات التوسع العالمي.
 
 ---
 
 ## Strict Rules | قواعد صارمة
 
-### 1. Modularity & Separation of Concerns
-- **Domain Logic**: Business logic MUST be separated from framework/infrastructure code.
-- **Layers**: Follow a layered architecture (e.g., Presentation, Application, Domain, Infrastructure).
+### 1. Architectural Integrity
+- **Clean Architecture**: Strictly separate Domain, Application, and Infrastructure layers. The Domain MUST NOT depend on any external libraries or frameworks.
+- **Dependency Rule**: Dependencies MUST only point inwards toward the Domain layer.
 
-### 2. Design Patterns
-- **Standard Patterns**: Use established design patterns (Factory, Singleton, Observer, Strategy) only when appropriate.
-- **Avoid Anti-patterns**: Avoid God Objects, Spaghetti Code, and Golden Hammer.
+### 2. Distributed Patterns
+- **Event Sourcing**: For critical systems requiring a full audit trail, store state as a sequence of events.
+- **CQRS**: Separate read and write paths to optimize performance and scalability. Use Read Models (Projections) tailored for specific UI needs.
+- **Data Consistency**: Choose the right consistency model (Strong vs. Eventual) based on the business use case and CAP theorem tradeoffs.
 
-### 3. Scalability
-- **Statelessness**: Prefer stateless services to allow horizontal scaling.
-- **Caching**: Implement caching strategies (Redis, Memcached) for frequently accessed data.
+### 3. Global Scalability
+- **Geo-Distribution**: Design for multi-region deployments to reduce latency and provide disaster recovery. Use Global Server Load Balancing (GSLB).
+- **Data Sharding**: Implement horizontal sharding for massive datasets that exceed the capacity of a single database instance.
+- **Statelessness**: ALL application servers MUST be stateless. Session state MUST be stored in a distributed store (e.g., Redis).
 
-### 4. Microservices (If applicable)
-- **Independence**: Each service must have its own database and be deployable independently.
-- **Communication**: Use asynchronous messaging (RabbitMQ, Kafka) for inter-service communication where possible.
+### 4. Integration & Communication
+- **API First**: Design and document APIs (OpenAPI/AsyncAPI) before starting any implementation.
+- **Message Durability**: Use persistent message brokers (Kafka, RabbitMQ with persistent queues) for critical inter-service communication.
+- **Idempotent Consumers**: Every message consumer MUST be idempotent to handle duplicate delivery safely.
 
-### 5. Resiliency
-- **Circuit Breakers**: Use circuit breakers for external service calls.
-- **Retries**: Implement exponential backoff for transient failures.
+### 5. Operational Excellence
+- **Automated Failover**: Implement automated health checks and failover mechanisms at all layers (DNS, Load Balancer, Database).
+- **Infrastructure as Code (IaC)**: The entire environment MUST be reproducible via IaC (Terraform, Pulumi).
+- **Security by Design**: Implement mTLS for all internal traffic and use a centralized Identity Provider (OIDC/SAML).

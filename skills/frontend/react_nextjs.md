@@ -1,30 +1,33 @@
-# React & Next.js Professional Standards | معايير ريأكت ونيكست جيه إس الاحترافية
+# Enterprise React & Next.js Standards | معايير ريأكت ونيكست جيه إس للمشاريع الكبرى
 
 ## Arabic Description | وصف بالعربية
-قواعد صارمة لتطوير تطبيقات ويب حديثة باستخدام React و Next.js. تركز هذه القواعد على تحسين الأداء (Rendering), إدارة الحالة (State), وخصائص Next.js الحديثة (App Router, SSR).
+قواعد هندسية متقدمة لتطبيقات React و Next.js في بيئات العمل الحقيقية والأنظمة الضخمة. تغطي القواعد أنماط التصميم المتقدمة، تحسين الأداء على مستوى الـ Rendering، والتعامل مع البيانات الضخمة.
 
 ---
 
 ## Strict Rules | قواعد صارمة
 
-### 1. Component Architecture
-- **Functional Components**: Use functional components with Hooks strictly. No Class components.
-- **Atomic Design**: Structure components into atoms, molecules, and organisms for maximum reusability.
-- **Composition**: Prefer component composition over deep prop drilling.
+### 1. Component Patterns & Performance
+- **Compound Components**: Use the Compound Component pattern for complex UI widgets (e.g., Tabs, Selects) to allow flexible sub-component rendering.
+- **Render Optimization**: Strictly prevent "Prop Drilling." Use Context for cross-cutting concerns, but wrap providers at the lowest possible level to minimize re-renders.
+- **Slot Pattern**: Use `children` or explicit "slot" props for better component composition and to avoid large, complex prop interfaces.
 
-### 2. State Management
-- **Local vs Global**: Keep state as local as possible. Use `useContext` or lightweight libraries (Zustand, Jotai) only when needed.
-- **Immutability**: NEVER mutate state or props directly. Use `useState` or `useReducer`.
+### 2. Next.js App Router & Server Features
+- **Streaming & Suspense**: Use `loading.tsx` and granular `<Suspense>` boundaries to stream UI segments. Data fetching MUST be moved as close to the leaf components as possible.
+- **Server Actions**: Secure all Server Actions with middleware or library-based validation (e.g., `next-safe-action`). Implement CSRF protection and input validation (Zod).
+- **Parallel & Intercepting Routes**: Utilize Next.js Parallel Routes for dashboard layouts and Intercepting Routes for modals to maintain URL state.
 
-### 3. Next.js App Router (Modern)
-- **Server Components**: Use React Server Components (RSC) by default. Only use `'use client'` when interactivity is required.
-- **Data Fetching**: Use `fetch` with appropriate caching and revalidation strategies. Use Server Actions for data mutations.
+### 3. Advanced Data Management
+- **Optimistic UI**: Implement optimistic updates for all mutation actions to provide an "instant" feel to the user.
+- **Prefetching Strategy**: Use `Link` component prefetching and manual `router.prefetch()` for predicted user journeys.
+- **Infinite Loading**: Use specialized hooks for large lists, ensuring virtualization (e.g., `react-window` or `virtuoso`) is used for more than 100 items.
 
-### 4. Performance Optimization
-- **Memoization**: Use `useMemo` and `useCallback` judiciously to avoid unnecessary re-renders.
-- **Image Optimization**: Always use the `next/image` component for automatic image optimization.
-- **Code Splitting**: Leverage dynamic imports for large components or libraries.
+### 4. Testing & Quality (Enterprise Standard)
+- **Visual Regression**: Integrate visual regression testing (e.g., Chromatic) for the component library.
+- **Integration over Unit**: Prioritize Integration tests (Testing Library) and E2E (Playwright) over testing individual component implementation details.
+- **Hooks Testing**: Custom hooks MUST have 100% test coverage using `renderHook`.
 
-### 5. Styling
-- **CSS-in-JS or Tailwind**: Use a consistent styling approach (Tailwind CSS is preferred for performance).
-- **Responsive Design**: Ensure all components are responsive and mobile-friendly by default.
+### 5. Deployment & Production
+- **Edge Runtime**: Use the Edge Runtime for global low-latency middleware and API routes where compatible.
+- **Caching Headers**: Explicitly define `Cache-Control` headers for all static and dynamic assets to optimize CDN performance.
+- **Strict TypeScript**: Never use `ts-ignore`. Use `satisfies` operator for better type inference with literal objects.

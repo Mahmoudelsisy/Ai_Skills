@@ -1,29 +1,31 @@
-# Secure Coding & DevSecOps | البرمجة الآمنة والأمن البرمجي
+# Professional DevSecOps & Secure Coding | الأمن البرمجي المتقدم وعمليات الأمان
 
 ## Arabic Description | وصف بالعربية
-هذا الملف يحتوي على قواعد صارمة لمنع الثغرات الأمنية في الكود، وحماية البيانات الحساسة، واتباع معايير OWASP.
+قواعد أمان متقدمة تدمج الأمان في صلب عملية التطوير (Shift-left security). تغطي القواعد أمان سلاسل التوريد البرمجية (Supply Chain Security)، نمذجة التهديدات المتقدمة، وإدارة الـ SBOM.
 
 ---
 
 ## Strict Rules | قواعد صارمة
 
-### 1. Input Validation & Sanitization
-- **Trust No One**: All input from users, APIs, or files MUST be validated and sanitized.
-- **SQL Injection**: Never concatenate strings to build queries. Use parameterized queries or ORMs.
-- **XSS Prevention**: Escape all data before rendering it in the UI.
+### 1. Shift-left Security & SAST/DAST
+- **Integrated Scanning**: Security scans (SAST, Secret Detection) MUST run on every commit. Build pipelines MUST fail if high/critical vulnerabilities are detected.
+- **DAST in Staging**: Run Dynamic Application Security Testing (DAST) on the staging environment before every production release.
 
-### 2. Secret Management
-- **No Hardcoding**: NEVER hardcode API keys, passwords, or secrets. Use environment variables or secret managers.
-- **Git Safety**: Use `.gitignore` to prevent committing sensitive files.
+### 2. Software Supply Chain Security
+- **SBOM (Software Bill of Materials)**: Generate and maintain a current SBOM for all production software to track and manage component vulnerabilities.
+- **Dependency Pinning**: ALWAYS pin dependencies to specific versions or hashes. Avoid "floating" versions in production.
+- **Provenance Verification**: Verify the integrity and provenance of third-party packages using digital signatures.
 
-### 3. Authentication & Authorization
-- **Principle of Least Privilege**: Grant only the minimum permissions necessary.
-- **Secure Sessions**: Use secure, HTTP-only cookies and strong JWT tokens.
+### 3. Advanced Threat Modeling
+- **Component-Level Modeling**: Perform threat modeling (e.g., using PASTA or STRIDE) at the design phase for every new microservice or major feature.
+- **Attack Path Analysis**: Identify and mitigate potential attack paths that could lead to unauthorized data access or system compromise.
 
-### 4. Dependency Security
-- **Audit**: Regularly run security audits on dependencies (e.g., `npm audit`, `pip-audit`).
-- **Update**: Keep all libraries updated to their latest secure versions.
+### 4. Infrastructure & Runtime Security
+- **Hardened Images**: Use distroless or minimal images for production. Remove all shells and unnecessary utilities.
+- **Immutable Infrastructure**: Production environments MUST be immutable. No manual configuration changes or direct SSH access allowed.
+- **Runtime Protection**: Implement runtime security monitoring (e.g., Falco) to detect suspicious system calls or process behavior in containers.
 
-### 5. Logging & Monitoring
-- **No Sensitive Data in Logs**: Never log passwords, PII, or tokens.
-- **Audit Trails**: Log critical actions for security auditing.
+### 5. Secure Data & Identity
+- **Secrets Encryption**: Secrets MUST be encrypted at rest and in transit. Use specialized tools like HashiCorp Vault with dynamic secret generation.
+- **mTLS Everywhere**: Implement mutual TLS for all internal service-to-service communication to ensure both encryption and authentication.
+- **Zero Trust**: Validate every request as if it originated from an untrusted network, regardless of its location in the internal architecture.
