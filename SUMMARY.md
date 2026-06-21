@@ -9,15 +9,17 @@ This inventory provides a comprehensive overview of the **Enterprise-Grade** ski
 - **Productivity & Soft Skills**: Async communication, Deep Work.
 - **Technical Writing**: High-quality documentation standards.
 - **Git Standards**: Professional version control & branching.
-- **Languages**: Python, TypeScript, Go, Rust, Java, C#, C/C++, Verilog.
+- **Languages**: Python (Enterprise), TypeScript (Node.js Mastery), Go (High Performance), Rust (Systems), Java (Spring Boot), C# (.NET), C/C++, Verilog.
 - **Systems Engineering**: Kernels, OS, and Compilers.
+- **Extreme Concurrency**: Elixir & Erlang/OTP Mastery.
 
 ### 2. Architecture & Design
 - **System Design & Architecture**: Clean Architecture, Microservices, Scalability.
 - **Modern Architecture Patterns**: Hexagonal, Onion, Repository, Unit of Work.
+- **Backend Framework Mastery**: NestJS, FastAPI, Go Gin/Echo.
 - **Frontend/Backend Rules**: High-scale engineering for web and server.
 - **UI/UX Design Systems**: Design Tokens, UX Psychology, a11y.
-- **Specialized Architectures**: Mobile, Game, Robotics, IoT, Blockchain, Quantum, Immersive.
+- **Specialized Architectures**: Mobile (Native Swift/Kotlin), Game, Robotics, IoT, Blockchain, Quantum, Immersive.
 
 ### 3. Distributed Systems & Networking
 - **Distributed Patterns**: CAP Theorem, Sagas, Event-Sourcing, CQRS.
@@ -25,6 +27,7 @@ This inventory provides a comprehensive overview of the **Enterprise-Grade** ski
 
 ### 4. Security & Compliance
 - **Advanced Security**: Zero Trust, XSS/CSRF Mitigation, Secrets Management.
+- **Cyber Defense & SOC**: Detection, Incident Response, Hardening.
 - **Cybersecurity & Pentesting**: Threat Modeling, Vulnerability assessment.
 - **Compliance & Privacy**: GDPR, HIPAA, Data protection.
 
@@ -35,9 +38,11 @@ This inventory provides a comprehensive overview of the **Enterprise-Grade** ski
 - **Database Design Advanced**: ACID, Sharding, Replication, Indexing.
 - **Data Engineering & Pipelines**: Streaming (Kafka/Spark), ETL.
 - **AI, ML & NLP**: LLM Engineering, Computer Vision, Ethical AI.
+- **MLOps Mastery**: Production AI, Automated Pipelines, Drift Detection.
 
 ### 7. DevOps & Observability
 - **DevOps & Platform Engineering**: GitOps, CI/CD, Infrastructure as Code (IaC).
+- **Cloud Provider Mastery**: Expert AWS, GCP, and Azure standards.
 - **Docker & Kubernetes**: Advanced orchestration and container safety.
 - **Observability & Ops**: Logging, Metrics, Tracing (APM), Canary/Blue-Green.
 - **Cloud Computing**: Cost optimization, High Availability.
@@ -58,9 +63,9 @@ This inventory provides a comprehensive overview of the **Enterprise-Grade** ski
 هذا الجرد يقدم نظرة شاملة على جميع ملفات المهارات المتوفرة في هذا المستودع بمستوى **المؤسسات الكبرى (Enterprise Grade)**.
 
 ### التصنيفات الرئيسية
-1. **احتراف الهندسة والبرمجة**: مبادئ الهندسة، اللغات، هندسة الأنظمة، وإعادة الهيكلة.
-2. **المعمارية والتصميم**: الأنظمة الموزعة، الأنماط الحديثة (Hexagonal)، ونظم التصميم.
-3. **الأمن والامتثال**: الثقة الصفرية، الأمن السيبراني، والخصوصية.
-4. **البيانات والذكاء الاصطناعي**: هندسة البيانات، نماذج اللغة (LLM)، ورؤية الحاسوب.
-5. **العمليات والمراقبة**: DevOps، كوبيرنيتيس، المراقبة (Tracing)، وهندسة الموثوقية (SRE).
-6. **التفكير الاستراتيجي والأعمال**: نماذج التفكير (Trade-offs)، إدارة المنتجات، وهندسة الشركات الناشئة.
+1. **احتراف الهندسة والبرمجة**: مبادئ الهندسة، اللغات المتقدمة، التوازي الفائق (Elixir).
+2. **المعمارية والتصميم**: الأنظمة الموزعة، أطر العمل (NestJS/FastAPI)، وتطبيقات الجوال الأصلية.
+3. **الأمن والامتثال**: الدفاع السيبراني، SOC، والثقة الصفرية.
+4. **البيانات والذكاء الاصطناعي**: MLOps، هندسة البيانات، ونماذج اللغة.
+5. **العمليات والمراقبة**: احتراف السحابيات (AWS/GCP/Azure)، DevOps، وSRE.
+6. **التفكير الاستراتيجي والأعمال**: نماذج التفكير، إدارة المنتجات، والشركات الناشئة.
