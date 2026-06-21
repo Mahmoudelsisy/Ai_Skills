@@ -10,7 +10,7 @@ This inventory provides a quick overview of all the specialized skill files avai
    - Technical Writing
    - Git Standards (Version Control)
 2. **Languages**
-   - Python, TypeScript, Go, Rust, Java, C#, C/C++ (Embedded)
+   - Python, TypeScript, Go, Rust, Java, C#, C/C++ (Embedded), Hardware Design (Verilog/VHDL)
 3. **Security & Compliance**
    - Secure Coding
    - Advanced Cybersecurity
@@ -19,6 +19,7 @@ This inventory provides a quick overview of all the specialized skill files avai
    - Frontend Best Practices
    - React & Next.js
    - UI/UX Design
+   - Technical SEO & Web Performance
 5. **Backend & Infrastructure**
    - Backend Best Practices
    - API Design
@@ -33,11 +34,15 @@ This inventory provides a quick overview of all the specialized skill files avai
    - Data Engineering
    - Data Science & Analytics
    - AI & Machine Learning
-7. **Specialized Domains**
+   - Ethical AI & AI Safety
+7. **Specialized & Emerging Domains**
    - Mobile Development
    - Blockchain & Smart Contracts
    - Game Development
    - Embedded Systems
+   - Robotics Engineering & ROS
+   - Internet of Things (IoT) & Edge Computing
+   - Quantum Computing
 8. **Management & QA**
    - Engineering Management
    - Testing Standards
@@ -54,7 +59,7 @@ This inventory provides a quick overview of all the specialized skill files avai
    - الكتابة التقنية
    - معايير Git (إدارة النسخ)
 2. **اللغات**
-   - بايثون، تيب سكريبت، جو، رست، جافا، سي شارب، سي/سي++ (المدمجة)
+   - بايثون، تيب سكريبت، جو، رست، جافا، سي شارب، سي/سي++ (المدمجة)، تصميم الأجهزة (Verilog/VHDL)
 3. **الأمن والامتثال**
    - البرمجة الآمنة
    - الأمن السيبراني المتقدم
@@ -63,6 +68,7 @@ This inventory provides a quick overview of all the specialized skill files avai
    - أفضل ممارسات الواجهات الأمامية
    - ريأكت ونيكست جيه إس
    - تصميم واجهة وتجربة المستخدم
+   - تحسين محركات البحث والأداء (SEO)
 5. **الأنظمة الخلفية والبنية التحتية**
    - أفضل ممارسات الأنظمة الخلفية
    - تصميم الـ API
@@ -77,11 +83,15 @@ This inventory provides a quick overview of all the specialized skill files avai
    - هندسة البيانات
    - علوم البيانات والتحليل
    - الذكاء الاصطناعي وتعلم الآلة
-7. **المجالات المتخصصة**
+   - أخلاقيات وأمان الذكاء الاصطناعي
+7. **المجالات المتخصصة والناشئة**
    - تطوير تطبيقات الجوال
    - البلوكشين والعقود الذكية
    - تطوير الألعاب
    - الأنظمة المدمجة
+   - هندسة الروبوتات و ROS
+   - إنترنت الأشياء وحوسبة الحافة
+   - الحوسبة الكمومية
 8. **الإدارة وضمان الجودة**
    - الإدارة الهندسية
    - معايير الاختبارات
