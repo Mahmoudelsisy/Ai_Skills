@@ -1,32 +1,29 @@
-# Enterprise System Design & Architecture | معمارية وتصميم الأنظمة الكبرى
+# Evolutionary Architecture & Failure-First Design | المعمارية التطورية والتصميم القائم على الفشل
 
 ## Arabic Description | وصف بالعربية
-معايير معمارية متقدمة لتصميم أنظمة برمجية ضخمة (Enterprise Architecture). تغطي القواعد أنماط التصميم الموزعة، التوافر العالي، واستراتيجيات التوسع العالمي.
+قواعد هندسية متقدمة لتصميم أنظمة "تطورية" (Evolutionary Architecture) قادرة على التغيير المستمر دون انهيار، مع تبني مبدأ "الفشل كحدث أساسي" لضمان بقاء النظام تحت أقسى الظروف.
 
 ---
 
 ## Strict Rules | قواعد صارمة
 
-### 1. Architectural Integrity
-- **Clean Architecture**: Strictly separate Domain, Application, and Infrastructure layers. The Domain MUST NOT depend on any external libraries or frameworks.
-- **Dependency Rule**: Dependencies MUST only point inwards toward the Domain layer.
+### 1. Evolutionary Architecture Principles
+- **Incremental Change**: Design for change by keeping modules decoupled and using well-defined interfaces.
+- **Fitness Functions**: Define and automate architectural "fitness functions" (e.g., performance metrics, security scores, coupling metrics) to protect architectural characteristics as the system evolves.
 
-### 2. Distributed Patterns
-- **Event Sourcing**: For critical systems requiring a full audit trail, store state as a sequence of events.
-- **CQRS**: Separate read and write paths to optimize performance and scalability. Use Read Models (Projections) tailored for specific UI needs.
-- **Data Consistency**: Choose the right consistency model (Strong vs. Eventual) based on the business use case and CAP theorem tradeoffs.
+### 2. Failure as a First-Class Citizen
+- **Assume Instability**: NEVER assume a network call, a database query, or a third-party service will succeed.
+- **Blast Radius Isolation**: Every service MUST have defined boundaries that prevent its failure from taking down unrelated components.
+- **Degraded Experience**: All critical UI flows MUST have a "degraded mode" version for when backend services are partially unavailable.
 
-### 3. Global Scalability
-- **Geo-Distribution**: Design for multi-region deployments to reduce latency and provide disaster recovery. Use Global Server Load Balancing (GSLB).
-- **Data Sharding**: Implement horizontal sharding for massive datasets that exceed the capacity of a single database instance.
-- **Statelessness**: ALL application servers MUST be stateless. Session state MUST be stored in a distributed store (e.g., Redis).
+### 3. Resilience Implementation
+- **Timeouts & Retries (Intelligent)**: Use jittered exponential backoff for retries. ALWAYS set aggressive timeouts for non-critical services.
+- **Fail-Fast vs Fail-Safe**: Design components to fail fast (returning error immediately) or fail safe (returning default/cached data) based on the criticality of the feature.
 
-### 4. Integration & Communication
-- **API First**: Design and document APIs (OpenAPI/AsyncAPI) before starting any implementation.
-- **Message Durability**: Use persistent message brokers (Kafka, RabbitMQ with persistent queues) for critical inter-service communication.
-- **Idempotent Consumers**: Every message consumer MUST be idempotent to handle duplicate delivery safely.
+### 4. Architectural Observability
+- **Metric-Driven Design**: Every new architectural component MUST expose metrics that indicate its internal health and performance.
+- **Tracing by Default**: ALL inter-service communication MUST be traced from the start.
 
-### 5. Operational Excellence
-- **Automated Failover**: Implement automated health checks and failover mechanisms at all layers (DNS, Load Balancer, Database).
-- **Infrastructure as Code (IaC)**: The entire environment MUST be reproducible via IaC (Terraform, Pulumi).
-- **Security by Design**: Implement mTLS for all internal traffic and use a centralized Identity Provider (OIDC/SAML).
+### 5. Future-Proofing
+- **Avoid Vendor Lock-in**: Abstract cloud-specific services behind interfaces to allow for future migration if needed.
+- **Standardization vs Innovation**: Use standard, well-proven patterns for core systems. Limit "experimental" patterns to isolated, non-critical services.

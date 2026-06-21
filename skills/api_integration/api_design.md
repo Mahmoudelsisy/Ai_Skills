@@ -1,33 +1,29 @@
-# Expert API Engineering & Integration | هندسة الـ API والربط البرمجي المتقدم
+# Strategic API Evolution & Governance | تطور الـ API الاستراتيجي والحوكمة
 
 ## Arabic Description | وصف بالعربية
-قواعد هندسية متقدمة لتصميم وتطوير الـ APIs للأنظمة الضخمة. تغطي القواعد أنماط REST, GraphQL Federation, gRPC، بالإضافة إلى موثوقية الـ Webhooks، مفاتيح التكرار (Idempotency)، واستراتيجيات الإصدارات المعقدة.
+قواعد هندسية متقدمة لحوكمة وتطور الـ APIs في المؤسسات الكبرى. تركز القواعد على استقرار العقود البرمجية (Contracts)، استراتيجيات إيقاف الإصدارات (Deprecation)، والحفاظ على التوافقية مع الأنظمة القديمة.
 
 ---
 
 ## Strict Rules | قواعد صارمة
 
-### 1. Advanced Protocol Selection
-- **gRPC for Internal**: Use gRPC (Protocol Buffers) for high-performance, low-latency inter-service communication. Enforce strict schema evolution rules.
-- **GraphQL Federation**: Use Apollo Federation or similar to unify multiple microservice graphs into a single entry point for frontends. Prevent "N+1" problems using Dataloaders.
-- **REST for Public**: Maintain REST for public-facing APIs, following strict Richardson Maturity Model Level 3 (HATEOAS) where beneficial.
+### 1. API Contract Stability
+- **Contract-First Design**: Use OpenAPI or AsyncAPI to define the contract BEFORE any code is written. The contract is the "Source of Truth."
+- **Backward Compatibility**: NEVER break a published API contract in a minor or patch version. Use automated contract testing (e.g., Prism, Dredd) to verify compatibility.
 
-### 2. Reliability & Idempotency
-- **Idempotency Keys**: All state-changing operations (POST/PATCH) MUST support an `Idempotency-Key` header to safely allow client retries.
-- **Webhook Reliability**: Implement an exponential backoff retry policy for outgoing Webhooks. Use a message queue to ensure Webhook delivery even if the receiver is temporarily down.
-- **Signature Verification**: All incoming and outgoing Webhooks MUST be signed (HMAC-SHA256) to ensure authenticity and integrity.
+### 2. Sophisticated Deprecation Strategy
+- **Deprecation Policy**: Clearly define and document the lifecycle of every API.
+- **Sunset Headers**: Use the `Sunset` HTTP header to notify clients of exact dates when an API version will be turned off.
+- **Migration Paths**: ALWAYS provide a clear migration guide and automated tools/scripts where possible when deprecating an API.
 
-### 3. Advanced Versioning & Compatibility
-- **Header-based Versioning**: Support versioning through custom headers (e.g., `Accept: application/vnd.api.v2+json`) for more flexible evolution.
-- **Breaking Changes Policy**: Never remove fields or change types in a minor version. Use "Sunset" headers to notify clients of upcoming deprecations.
-- **Shadow Mirroring**: Use "Traffic Shadowing" (Mirroring) to test new API versions with real production traffic before full release.
+### 3. API Governance & Consistency
+- **Design Review Board**: Major API changes SHOULD go through a design review to ensure consistency across the entire organization's API ecosystem.
+- **Standardized Error Schemas**: Use a unified error format (e.g., RFC 7807 - Problem Details for HTTP APIs) across all services.
 
-### 4. Performance & Traffic Management
-- **Adaptive Throttling**: Implement rate limiting based on client tiers and current system health (Shedding load when near capacity).
-- **Partial Responses**: Support `fields` query parameters to allow clients to request only the data they need, reducing payload size.
-- **Caching Policies**: Use `ETag` and `Last-Modified` headers for fine-grained cache control.
+### 4. Integration Integrity
+- **Idempotency Keys**: MANDATORY for all transactional and state-changing endpoints.
+- **Schema Validation**: Strictly validate all incoming and outgoing payloads against the defined schema at the gateway level.
 
-### 5. Security & Governance (Enterprise)
-- **Scopes & Permissions**: Use fine-grained OAuth2 Scopes. Never rely on simple "Admin" booleans.
-- **API Gateway Governance**: All APIs MUST go through a centralized gateway for consistent Authentication, Logging, and Schema Validation.
-- **Input Sanitization**: Use strict schema validation (JSON Schema/Zod) for ALL incoming payloads at the gateway level.
+### 5. Advanced Monitoring
+- **Version Usage Tracking**: Track usage metrics per API version. Identify "sticky" clients who haven't migrated from deprecated versions.
+- **Latency by Client**: Monitor P99 latency per client/consumer to identify specific integration issues.

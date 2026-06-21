@@ -1,30 +1,29 @@
-# Advanced Security Practices | الممارسات الأمنية المتقدمة
+# Strategic Security & Threat Modeling | أمن الاستراتيجيات ونمذجة التهديدات
 
 ## Arabic Description | وصف بالعربية
-قواعد أمان متقدمة تتجاوز القواعد الأساسية لتشمل حماية الأنظمة من هجمات XSS, CSRF, SQL Injection بشكل معمق، وتطبيق هندسة "الثقة الصفرية" (Zero Trust)، وإدارة الأسرار التقنية (Secrets Management) بشكل احترافي.
+قواعد أمان استراتيجية تركز على "نمذجة التهديدات" (Threat Modeling) قبل التنفيذ. تشمل تحديد الأصول، متجهات الهجوم، وتصميم الأنظمة لتكون منيعة ضد الاختراق منذ المرحلة الأولى.
 
 ---
 
 ## Strict Rules | قواعد صارمة
 
-### 1. Web Vulnerability Mitigation (Deep)
-- **XSS Prevention**: Use Context-Aware Encoding. Never use `dangerouslySetInnerHTML` without rigorous sanitization. Set a strong `Content-Security-Policy` (CSP).
-- **CSRF Protection**: ALWAYS use Anti-CSRF tokens for state-changing operations. Set `SameSite=Strict` for sensitive cookies.
-- **SQL Injection**: Use parameterized queries or ORMs exclusively. NEVER build queries using string concatenation with user input.
+### 1. Advanced Threat Modeling
+- **Asset Identification**: Clearly identify and rank all digital assets (Data, Credentials, Infrastructure) based on criticality.
+- **Threat Profiling**: Model potential threats using frameworks like STRIDE. Identify possible attackers and their motivations.
+- **Attack Vector Analysis**: Map all possible entry points and data flow paths. Implement defense-in-depth for every critical path.
 
-### 2. Zero Trust Architecture
-- **Verify Explicitly**: Never trust a request based on network location. ALWAYS verify the user, the device, and the request (e.g., using mTLS and OIDC).
-- **Least Privilege**: Grant the minimum necessary access for the shortest duration possible. Use Role-Based Access Control (RBAC) and Attribute-Based Access Control (ABAC).
+### 2. Security at Design Phase
+- **Shift-Left Security**: Security reviews MUST occur during the architecture phase, not just before release.
+- **Privacy by Design**: Data minimization and anonymization MUST be the default architectural choice.
 
-### 3. Identity & Authentication
-- **Secure Hashing**: Use `bcrypt` or `Argon2` for password hashing with appropriate salt and cost factors.
-- **Token Security**: Use signed, short-lived JWTs. Store them securely (HTTP-only, Secure cookies). Implement token revocation lists.
+### 3. Supply Chain & Ecosystem Security
+- **SBOM Management**: Maintain and regularly scan a Software Bill of Materials (SBOM) for all production services.
+- **Third-Party Risk**: Evaluate the security posture of every third-party integration. Implement strict egress controls.
 
-### 4. Advanced Secrets Management
-- **No Secrets in Code**: Secrets MUST NEVER exist in version control, even encrypted.
-- **Dynamic Secrets**: Use tools like HashiCorp Vault to generate dynamic, short-lived credentials for databases and services.
-- **Secret Rotation**: Implement automated secret rotation for all production credentials.
+### 4. Detection & Response Strategy
+- **High-Fidelity Signal**: Configure security alerts to minimize noise. Focus on signals that indicate actual compromise or high-risk unauthorized access.
+- **Automated Containment**: Where possible, implement automated scripts to isolate potentially compromised containers or revoke suspected tokens.
 
-### 5. Defensive Coding
-- **Rate Limiting**: Implement rate limiting at the API gateway to prevent Brute Force and DoS attacks.
-- **Input Sanitization**: Validate and sanitize ALL incoming data at the application boundary using strict schemas (e.g., JSON Schema, Zod).
+### 5. Security Documentation
+- **Security ADRs**: Document major security decisions and why certain risks were accepted or mitigated.
+- **Incident Playbooks**: Maintain updated, step-by-step playbooks for responding to the most likely security threats.

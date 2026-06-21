@@ -1,30 +1,28 @@
-# Advanced Distributed Systems & Patterns | الأنظمة الموزعة والأنماط المتقدمة
+# Real-World Distributed Systems Mastery | احتراف الأنظمة الموزعة في العالم الحقيقي
 
 ## Arabic Description | وصف بالعربية
-قواعد هندسية متقدمة لتصميم وإدارة الأنظمة الموزعة. تغطي القواعد نظرية CAP، نماذج الاتساق (Consistency Models)، الاتساق النهائي (Eventual Consistency)، وأنماط مثل Saga و Message Queues.
+قواعد هندسية متقدمة للتعامل مع المشاكل الحقيقية في الأنظمة الموزعة. تغطي القواعد حالات الفشل الجزئي، انقسام الشبكة (Network Partitions)، انحراف الساعة (Clock Drift)، ومشكلة "الدماغ المنقسم" (Split Brain)، مع تطبيق استراتيجيات اتساق البيانات المتقدمة.
 
 ---
 
 ## Strict Rules | قواعد صارمة
 
-### 1. Distributed Systems Theory
-- **CAP Theorem Tradeoffs**: Consciously choose between Consistency (C) and Availability (A) during network partitions (P).
-- **Consistency Models**: Select the appropriate model (Strong, Eventual, Causal) based on business requirements. Use Strong Consistency only for financial/critical data.
+### 1. Handling Real-World Failures
+- **Partial Failure Awareness**: NEVER assume all parts of a distributed system are up. Design for "Degraded Mode" where some services are unavailable.
+- **Network Partition Resilience**: Use consensus algorithms (Raft, Paxos) or appropriate coordination tools (Etcd, Consul) to handle network partitions and prevent **Split Brain** scenarios.
 
-### 2. Distributed Patterns (Resilience & Transactions)
-- **Saga Pattern**: Use Sagas for long-running distributed transactions. Prefer Choreography (event-based) for low coupling and Orchestration for complex flows.
-- **Circuit Breaker**: Implement circuit breakers for all synchronous inter-service calls to prevent cascading failures.
-- **Bulkheads**: Isolate service resources (e.g., thread pools, connection pools) to ensure a failure in one component doesn't take down the entire system.
+### 2. Time & Consistency Challenges
+- **Clock Drift Mitigation**: NEVER rely on local system time for ordering events across servers. Use Logical Clocks (Lamport, Vector Clocks) or Hybrid Logical Clocks (HLC).
+- **Inconsistency Management**: Identify where "Read-after-write" consistency is critical and where "Eventual Consistency" is acceptable.
 
-### 3. Messaging & Pub/Sub (Kafka/RabbitMQ)
-- **Message Durability**: Ensure critical messages are persisted in the broker.
-- **Idempotent Consumers**: ALL message consumers MUST be idempotent. Handle duplicate messages gracefully.
-- **Backpressure**: Implement backpressure handling to prevent overwhelming downstream services.
+### 3. Advanced Consistency Patterns
+- **Transactional Outbox Pattern**: ALWAYS use the Outbox pattern when updating a database and publishing an event simultaneously to ensure atomicity and prevent data loss.
+- **Saga Pattern (Advanced)**: Use Sagas to manage complex, multi-step distributed transactions with clear compensating actions for every step.
 
-### 4. CQRS & Event Sourcing
-- **CQRS**: Separate the command (write) side from the query (read) side. Optimize read models for specific UI/Search needs.
-- **Event Sourcing**: Store the state as a sequence of immutable events. Use snapshots to optimize the reconstruction of current state.
+### 4. Data Sync & Reliability
+- **Idempotency Everywhere**: All distributed operations MUST be idempotent to handle duplicate deliveries caused by retries.
+- **Backpressure & Load Shedding**: Implement backpressure to prevent cascading failures. Use Load Shedding to reject requests when the system is near capacity to protect core stability.
 
-### 5. Distributed Coordination
-- **Distributed Locking**: Use specialized tools (Redis/Redlock, Etcd, Zookeeper) for distributed locking. Never implement custom locking logic for critical shared resources.
-- **Service Discovery**: Use a service registry for dynamic endpoint discovery in large-scale microservice environments.
+### 5. Distributed State
+- **Lease & Locking**: Use leases for distributed locking to avoid deadlocks in case of client failure.
+- **Quorum-based Decisions**: For critical state changes, require a quorum (N/2 + 1) of nodes to agree before committing.
