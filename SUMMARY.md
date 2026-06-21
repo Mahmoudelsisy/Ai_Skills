@@ -1,7 +1,7 @@
 # Professional AI Agent Skills Inventory | جرد مهارات وكلاء الذكاء الاصطناعي الاحترافية
 
 ## English
-This inventory provides a comprehensive overview of the **Enterprise-Grade** and **Elite 10%** skill files available in this repository.
+This inventory provides a comprehensive overview of the **Enterprise-Grade** and **Elite 10%** skill files available in this universal repository.
 
 ### 1. Core Engineering & Programming
 - **Engineering Principles (Elite)**: Clean Code, SOLID, DRY, KISS, YAGNI, SoC.
@@ -15,7 +15,7 @@ This inventory provides a comprehensive overview of the **Enterprise-Grade** and
 ### 2. Architecture & Design
 - **System Design (Elite)**: Evolutionary Architecture, Failure-First Design.
 - **Modern Architecture Patterns**: Hexagonal, Onion, Repository, Unit of Work.
-- **Backend Framework Mastery**: NestJS, FastAPI, Go Gin/Echo.
+- **Backend Framework Mastery**: NestJS, FastAPI, Go Gin/Echo, Rails, Laravel.
 - **Frontend Framework Mastery**: React/Next.js, Vue 3, Angular.
 - **Mobile Mastery**: Native Swift (iOS), Kotlin (Android), Cross-platform.
 - **Specialized Architectures**: Mobile, Game, Robotics, IoT, Blockchain, Quantum, Immersive.
@@ -29,8 +29,8 @@ This inventory provides a comprehensive overview of the **Enterprise-Grade** and
 ### 4. Security & Compliance
 - **Advanced Security (Elite)**: Threat Modeling, Zero Trust, Secrets Management.
 - **Cyber Defense & SOC**: Detection, Incident Response, Hardening.
-- **Cybersecurity & Pentesting**: Vulnerability assessment.
 - **Compliance & Privacy**: GDPR, HIPAA, Data protection.
+- **Legal & Licensing**: Open Source Stewardship, IP Management.
 
 ### 5. API & Integration
 - **API Design (Elite)**: Contract Stability, Deprecation Strategy, Idempotency.
@@ -40,7 +40,6 @@ This inventory provides a comprehensive overview of the **Enterprise-Grade** and
 - **Database Design Advanced**: ACID, Sharding, Replication, Indexing.
 - **Data Lifecycle (Elite)**: Retention, Archiving, Privacy Compliance.
 - **Big Data Mastery**: Spark, Flink, Data Lakes (Delta/Iceberg).
-- **Data Engineering & Pipelines**: Streaming (Kafka), ETL.
 - **AI, ML & NLP**: LLM Engineering, Computer Vision, Ethical AI.
 - **MLOps Mastery**: Production AI, Automated Pipelines, Drift Detection.
 
@@ -59,26 +58,31 @@ This inventory provides a comprehensive overview of the **Enterprise-Grade** and
 - **AdTech & Bidding**: Ultra-low latency, Real-time bidding.
 - **Hardware Engineering Mastery**: FPGA/ASIC design, RTL, HLS.
 - **Kernel & OS Internals**: MMU, Scheduler, File system internals.
+- **Graphics & Media**: GPU Programming, Shaders, 3D Math.
+- **Geospatial & GIS**: PostGIS, Coordinate systems, H3.
 
 ### 9. Business, Process & Strategic Thinking
 - **Expert Decision Making (Elite)**: Pressure management, ROI, Best vs Perfect.
 - **Thinking Models (Elite)**: Trade-offs, Constraints-Driven Design, Systems Thinking.
 - **Enterprise Concepts**: Multi-tenancy, Feature Flags, Rollbacks.
 - **SDLC & Process Excellence**: RFC/ADR process, Requirement gathering.
-- **Human Factors (Elite)**: Bus Factor, Knowledge Sharing, Team Culture.
 - **Developer Experience (Elite)**: Platform Thinking, CLI Design, Golden Paths.
-- **Product & Project Management**: Agile, Product Discovery.
-- **Specialized Industry Standards**: Fintech, E-commerce, Aerospace, HealthTech, Sustainability, Startup Engineering.
+- **Globalization**: Localization (L10n), RTL support, Cultural UI.
+- **Legacy Modernization**: Systems archaeology, Mainframe to Cloud.
+- **Specialized Industries**: Fintech, E-commerce, Aerospace, HealthTech, Sustainability, Startup Engineering.
 - **Scientific Computing**: High-performance modeling and Julia.
 - **Testing & QA**: Advanced testing strategies (TDD/BDD).
 
 ---
 
 ## العربية
-هذا الجرد يقدم نظرة شاملة على جميع ملفات المهارات المتوفرة في هذا المستودع بمستوى **النخبة (The Elite 10%)**.
+هذا الجرد يقدم نظرة شاملة على جميع ملفات المهارات المتوفرة في هذا المستودع العالمي بمستوى **النخبة والمؤسسات**.
 
 ### التصنيفات الرئيسية
-1. **احتراف الهندسة (مستوى النخبة)**: التفكير الميتا، المعمارية التطورية، واتخاذ القرارات تحت الضغط.
-2. **الأنظمة الموزعة والعمليات الفائقة**: التعامل مع مشاكل العالم الحقيقي، SRE المتقدم، وهندسة الفوضى.
-3. **الأمن والبيانات الاستراتيجية**: نمذجة التهديدات، دورة حياة البيانات، والحوكمة.
-4. **العوامل البشرية والمنصات**: تجربة المطور، عقلية المنصة مقابل المنتج، وثقافة تبادل المعرفة.
+1. **احتراف الهندسة والبرمجة**: مبادئ النخبة، الأنظمة، اللغات المتقدمة.
+2. **المعمارية والتصميم**: الأنظمة الموزعة، الأنماط الحديثة، وأطر العمل.
+3. **الأمن والامتثال**: الأمن الاستراتيجي، الحوكمة، والملكية الفكرية.
+4. **البيانات والذكاء الاصطناعي**: البيانات الضخمة، MLOps، ودورة حياة البيانات.
+5. **العمليات والمراقبة**: السحابيات المتقدمة، SRE، والموثوقية.
+6. **الأنظمة الصناعية والتقنيات التخصصية**: الرسوميات، الجيومكانية، الأنظمة الصناعية.
+7. **التفكير الاستراتيجي والأعمال**: اتخاذ القرارات، التوطين، وتحديث الأنظمة القديمة.
