@@ -9,6 +9,7 @@ This inventory provides a quick overview of all the specialized skill files avai
    - Refactoring & Legacy Code
    - Technical Writing
    - Git Standards (Version Control)
+   - Productivity & Soft Skills
 2. **Languages**
    - Python, TypeScript, Go, Rust, Java, C#, C/C++ (Embedded), Hardware Design (Verilog/VHDL)
 3. **Security & Compliance**
@@ -48,8 +49,12 @@ This inventory provides a quick overview of all the specialized skill files avai
    - Robotics Engineering & ROS
    - Internet of Things (IoT) & Edge Computing
    - Quantum Computing
-8. **Management & QA**
+   - Fintech Engineering
+   - E-commerce Standards
+8. **Management, Business & QA**
    - Engineering Management
+   - Product Management & Agile
+   - Startup & Venture Engineering
    - Testing Standards
 
 ---
@@ -63,6 +68,7 @@ This inventory provides a quick overview of all the specialized skill files avai
    - إعادة الهيكلة والكود القديم
    - الكتابة التقنية
    - معايير Git (إدارة النسخ)
+   - الإنتاجية والمهارات الناعمة
 2. **اللغات**
    - بايثون، تيب سكريبت، جو، رست، جافا، سي شارب، سي/سي++ (المدمجة)، تصميم الأجهزة (Verilog/VHDL)
 3. **الأمن والامتثال**
@@ -102,6 +108,10 @@ This inventory provides a quick overview of all the specialized skill files avai
    - هندسة الروبوتات و ROS
    - إنترنت الأشياء وحوسبة الحافة
    - الحوسبة الكمومية
-8. **الإدارة وضمان الجودة**
+   - التقنيات المالية (Fintech)
+   - معايير التجارة الإلكترونية
+8. **الإدارة، الأعمال وضمان الجودة**
    - الإدارة الهندسية
+   - إدارة المنتجات وأجايل
+   - هندسة الشركات الناشئة
    - معايير الاختبارات
