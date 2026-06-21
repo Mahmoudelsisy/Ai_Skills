@@ -8,6 +8,7 @@ This inventory provides a quick overview of all the specialized skill files avai
    - Engineering Principles
    - Refactoring & Legacy Code
    - Technical Writing
+   - Git Standards (Version Control)
 2. **Languages**
    - Python, TypeScript, Go, Rust, Java, C#, C/C++ (Embedded)
 3. **Security & Compliance**
@@ -25,13 +26,18 @@ This inventory provides a quick overview of all the specialized skill files avai
    - Cloud Computing
    - DevOps Rules
    - SRE & Reliability
+   - Linux & Bash Scripting
+   - Docker & Kubernetes (Containerization)
+   - Networking & Protocols
 6. **Data & AI**
    - Data Engineering
+   - Data Science & Analytics
    - AI & Machine Learning
 7. **Specialized Domains**
    - Mobile Development
    - Blockchain & Smart Contracts
    - Game Development
+   - Embedded Systems
 8. **Management & QA**
    - Engineering Management
    - Testing Standards
@@ -46,6 +52,7 @@ This inventory provides a quick overview of all the specialized skill files avai
    - مبادئ الهندسة
    - إعادة الهيكلة والكود القديم
    - الكتابة التقنية
+   - معايير Git (إدارة النسخ)
 2. **اللغات**
    - بايثون، تيب سكريبت، جو، رست، جافا، سي شارب، سي/سي++ (المدمجة)
 3. **الأمن والامتثال**
@@ -63,13 +70,18 @@ This inventory provides a quick overview of all the specialized skill files avai
    - الحوسبة السحابية
    - قواعد DevOps
    - هندسة الموثوقية (SRE)
+   - لينكس وبرمجة الشل
+   - دوكر وكوبيرنيتيس (الحاويات)
+   - الشبكات والبروتوكولات
 6. **البيانات والذكاء الاصطناعي**
    - هندسة البيانات
+   - علوم البيانات والتحليل
    - الذكاء الاصطناعي وتعلم الآلة
 7. **المجالات المتخصصة**
    - تطوير تطبيقات الجوال
    - البلوكشين والعقود الذكية
    - تطوير الألعاب
+   - الأنظمة المدمجة
 8. **الإدارة وضمان الجودة**
    - الإدارة الهندسية
    - معايير الاختبارات
