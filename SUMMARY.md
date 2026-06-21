@@ -1,141 +1,66 @@
-# Professional AI Agent Skills Encyclopedia | موسوعة مهارات وكلاء الذكاء الاصطناعي الاحترافية
+# Professional AI Agent Skills Inventory | جرد مهارات وكلاء الذكاء الاصطناعي الاحترافية
 
 ## English
-This inventory provides a quick overview of all the specialized skill files available in this repository. These skills have been upgraded to **Enterprise/Professional** standards.
+This inventory provides a comprehensive overview of the **Enterprise-Grade** skill files available in this repository.
 
-### Categories & Skills
-1. **Core Engineering Mastery**
-   - Professional Engineering Principles
-   - Expert Refactoring & Legacy Code
-   - High-Quality Technical Writing
-   - Advanced Git Standards (Version Control)
-   - Engineering Productivity & Soft Skills
-   - Sustainable & Green Engineering
-2. **Programming Language Mastery (Advanced)**
-   - Enterprise Python Mastery
-   - Enterprise TypeScript & Node.js Mastery
-   - Enterprise Go Mastery
-   - Enterprise Rust Mastery
-   - Java & Spring Boot Professional Standards
-   - C# & .NET Professional Standards
-   - C/C++ (Embedded)
-   - Hardware Design (Verilog/VHDL)
-3. **Security, Compliance & DevSecOps**
-   - Professional DevSecOps & Secure Coding
-   - Advanced Cybersecurity & Pentesting
-   - Compliance, Privacy & Data Protection
-4. **Frontend & Design Systems (High Scale)**
-   - Enterprise Frontend Engineering
-   - Enterprise React & Next.js Standards
-   - Sophisticated UI/UX & Design Systems
-   - Technical SEO & Web Performance
-5. **Backend, Infrastructure & Architecture**
-   - Enterprise Backend & Distributed Systems
-   - Expert API Engineering & Integration
-   - Enterprise System Design & Architecture
-   - Advanced Architectural Patterns (EDA, Micro-frontends)
-   - Cloud Computing & Serverless
-   - Professional DevOps & Platform Engineering
-   - SRE & Reliability Engineering
-   - Linux, Bash & Shell Scripting
-   - Docker & Kubernetes Orchestration
-   - Infrastructure as Code (IaC) Standards
-   - Computer Networking & Protocols
-   - Systems Programming (Kernels & Compilers)
-6. **Data, AI & Specialized Tech**
-   - High-Scale Database Engineering
-   - Real-time Data Streaming (Kafka/Spark)
-   - Data Science & Analytics
-   - NLP & LLM Engineering
-   - Computer Vision & Media Processing
-   - AI & Machine Learning Rules
-   - Ethical AI & AI Safety
-   - Bioinformatics & Health Tech
-7. **Specialized Domains**
-   - Mobile Application Development
-   - Blockchain & Smart Contracts
-   - Game Development & Engineering
-   - Embedded Systems
-   - Robotics Engineering & ROS
-   - Internet of Things (IoT) & Edge Computing
-   - Quantum Computing
-   - Fintech Engineering & Financial Systems
-   - E-commerce & Digital Commerce
-   - AR/VR & Metaverse
-   - Aerospace & Aviation Software
-   - Startup & Venture Engineering
-8. **Management, Business & QA**
-   - Engineering Management & Leadership
-   - Product Management & Agile Excellence
-   - Testing & Quality Assurance (QA)
+### 1. Core Engineering & Programming
+- **Engineering Principles**: Clean Code, SOLID, DRY, KISS, YAGNI, SoC.
+- **Refactoring & Legacy Code**: Expert-level safe code improvement.
+- **Productivity & Soft Skills**: Async communication, Deep Work.
+- **Technical Writing**: High-quality documentation standards.
+- **Git Standards**: Professional version control & branching.
+- **Languages**: Python, TypeScript, Go, Rust, Java, C#, C/C++, Verilog.
+- **Systems Engineering**: Kernels, OS, and Compilers.
+
+### 2. Architecture & Design
+- **System Design & Architecture**: Clean Architecture, Microservices, Scalability.
+- **Modern Architecture Patterns**: Hexagonal, Onion, Repository, Unit of Work.
+- **Frontend/Backend Rules**: High-scale engineering for web and server.
+- **UI/UX Design Systems**: Design Tokens, UX Psychology, a11y.
+- **Specialized Architectures**: Mobile, Game, Robotics, IoT, Blockchain, Quantum, Immersive.
+
+### 3. Distributed Systems & Networking
+- **Distributed Patterns**: CAP Theorem, Sagas, Event-Sourcing, CQRS.
+- **Networking & Protocols**: gRPC, HTTP/3, WebSockets, Reliability.
+
+### 4. Security & Compliance
+- **Advanced Security**: Zero Trust, XSS/CSRF Mitigation, Secrets Management.
+- **Cybersecurity & Pentesting**: Threat Modeling, Vulnerability assessment.
+- **Compliance & Privacy**: GDPR, HIPAA, Data protection.
+
+### 5. API & Integration
+- **API Engineering**: REST, GraphQL Federation, Idempotency, Webhooks.
+
+### 6. Data & AI Engineering
+- **Database Design Advanced**: ACID, Sharding, Replication, Indexing.
+- **Data Engineering & Pipelines**: Streaming (Kafka/Spark), ETL.
+- **AI, ML & NLP**: LLM Engineering, Computer Vision, Ethical AI.
+
+### 7. DevOps & Observability
+- **DevOps & Platform Engineering**: GitOps, CI/CD, Infrastructure as Code (IaC).
+- **Docker & Kubernetes**: Advanced orchestration and container safety.
+- **Observability & Ops**: Logging, Metrics, Tracing (APM), Canary/Blue-Green.
+- **Cloud Computing**: Cost optimization, High Availability.
+- **SRE & Reliability**: SLIs/SLOs, Error Budgets.
+- **Linux & Bash**: Secure system administration and scripting.
+
+### 8. Business, Process & Strategic Thinking
+- **Thinking Models**: Trade-offs, Build vs Buy, First Principles.
+- **Enterprise Concepts**: Multi-tenancy, Feature Flags, Rollbacks.
+- **SDLC & Process Excellence**: Requirements gathering, RFC/ADR process.
+- **Product & Project Management**: Agile, Product Discovery, Backlog grooming.
+- **Specialized Industry Standards**: Fintech, E-commerce, Aerospace, HealthTech, Sustainability, Startup Engineering.
+- **Testing & QA**: Advanced testing strategies (TDD/BDD).
 
 ---
 
 ## العربية
-هذا الجرد يقدم نظرة سريعة على جميع ملفات المهارات المتخصصة المتوفرة في هذا المستودع. تم تطوير هذه المهارات لتصل إلى **معايير الأنظمة الضخمة والمؤسسات الكبرى**.
+هذا الجرد يقدم نظرة شاملة على جميع ملفات المهارات المتوفرة في هذا المستودع بمستوى **المؤسسات الكبرى (Enterprise Grade)**.
 
-### التصنيفات والمهارات
-1. **احتراف الهندسة الأساسية**
-   - مبادئ الهندسة الاحترافية
-   - إعادة الهيكلة والكود القديم (مستوى خبير)
-   - الكتابة التقنية عالية الجودة
-   - معايير Git المتقدمة
-   - الإنتاجية والمهارات الناعمة للمهندسين
-   - الهندسة المستدامة والخضراء
-2. **احتراف لغات البرمجة (مستوى متقدم)**
-   - احتراف بايثون للمؤسسات
-   - احتراف تيب سكريبت ونود جيه إس
-   - احتراف لغة جو للمشاريع الكبرى
-   - احتراف لغة رست للأنظمة فائقة الأمان
-   - معايير جافا وسبرينج بوت الاحترافية
-   - معايير سي شارب ودوت نت
-   - لغة C/C++ (الأنظمة المدمجة)
-   - تصميم الأجهزة (Verilog/VHDL)
-3. **الأمن، الامتثال و DevSecOps**
-   - الأمن البرمجي المتقدم وعمليات الأمان
-   - الأمن السيبراني المتقدم واختبار الاختراق
-   - الامتثال، الخصوصية وحماية البيانات
-4. **الواجهات الأمامية ونظم التصميم (للأنظمة الضخمة)**
-   - هندسة الواجهات الأمامية للمؤسسات
-   - معايير ريأكت ونيكست جيه إس للمشاريع الكبرى
-   - تصميم الواجهات وتجربة المستخدم المتقدمة
-   - تحسين محركات البحث والأداء التقني (SEO)
-5. **الأنظمة الخلفية، البنية التحتية والمعمارية**
-   - الأنظمة الخلفية والموزعة للمؤسسات الكبرى
-   - هندسة الـ API والربط البرمجي المتقدم
-   - معمارية وتصميم الأنظمة الكبرى
-   - الأنماط المعمارية المتقدمة (EDA, Micro-frontends)
-   - الحوسبة السحابية والأنظمة بدون خادم
-   - هندسة المنصات والعمليات المتقدمة (DevOps)
-   - هندسة الموثوقية (SRE)
-   - لينكس وبرمجة الشل
-   - دوكر وكوبيرنيتيس (أتمتة الحاويات)
-   - البنية التحتية كشيفرة (IaC)
-   - الشبكات والبروتوكولات
-   - برمجة الأنظمة (النواة والمترجمات)
-6. **البيانات، الذكاء الاصطناعي والتقنيات المتخصصة**
-   - هندسة قواعد البيانات للأنظمة الضخمة
-   - تدفق البيانات اللحظي (Kafka/Spark)
-   - علوم البيانات والتحليل
-   - هندسة الـ NLP والنماذج اللغوية
-   - رؤية الحاسوب ومعالجة الوسائط
-   - قواعد الذكاء الاصطناعي وتعلم الآلة
-   - أخلاقيات وأمان الذكاء الاصطناعي
-   - المعلوماتية الحيوية والتقنيات الصحية
-7. **المجالات المتخصصة**
-   - تطوير تطبيقات الجوال
-   - البلوكشين والعقود الذكية
-   - تطوير وهندسة الألعاب
-   - الأنظمة المدمجة
-   - هندسة الروبوتات و ROS
-   - إنترنت الأشياء وحوسبة الحافة
-   - الحوسبة الكمومية
-   - هندسة التقنيات المالية (Fintech)
-   - التجارة الإلكترونية والرقمية
-   - الواقع المعزز والافتراضي والميتافيرس
-   - برمجيات الطيران والفضاء
-   - هندسة الشركات الناشئة
-8. **الإدارة، الأعمال وضمان الجودة**
-   - الإدارة الهندسية والقيادة التقنية
-   - إدارة المنتجات والتميز في أجايل
-   - الاختبارات وضمان الجودة (QA)
+### التصنيفات الرئيسية
+1. **احتراف الهندسة والبرمجة**: مبادئ الهندسة، اللغات، هندسة الأنظمة، وإعادة الهيكلة.
+2. **المعمارية والتصميم**: الأنظمة الموزعة، الأنماط الحديثة (Hexagonal)، ونظم التصميم.
+3. **الأمن والامتثال**: الثقة الصفرية، الأمن السيبراني، والخصوصية.
+4. **البيانات والذكاء الاصطناعي**: هندسة البيانات، نماذج اللغة (LLM)، ورؤية الحاسوب.
+5. **العمليات والمراقبة**: DevOps، كوبيرنيتيس، المراقبة (Tracing)، وهندسة الموثوقية (SRE).
+6. **التفكير الاستراتيجي والأعمال**: نماذج التفكير (Trade-offs)، إدارة المنتجات، وهندسة الشركات الناشئة.

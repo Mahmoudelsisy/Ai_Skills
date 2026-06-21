@@ -1,58 +1,45 @@
-# AI Agent Skills Encyclopedia | موسوعة مهارات وكلاء الذكاء الاصطناعي
+# Enterprise AI Agent Skills Encyclopedia | موسوعة مهارات وكلاء الذكاء الاصطناعي للمؤسسات
 
 ## English
-
-### Overview
-This repository contains a comprehensive collection of **Strict Rules** and **Expert Skills** for AI Agents used in modern IDEs (Cursor, Windsurf, Claude Code, Cline, etc.). These skills are designed to enforce high standards in software engineering, architecture, security, and business logic.
+This encyclopedia is a world-class collection of **Strict Rules** and **Expert Engineering Skills** designed for large-scale enterprise environments. It follows a 30-pillar knowledge map covering everything from core engineering to advanced distributed systems and business thinking.
 
 ### How to Use
-Depending on your tool, you can apply these skills in different ways:
+Copy the contents of the relevant `.md` files into your IDE's rule configuration (e.g., `.cursorrules`, `.windsurfrules`) or system prompt.
 
-#### 1. Cursor (.cursorrules)
-Copy the content of the relevant `.md` files into your `.cursorrules` file in the root of your project. You can combine multiple skills by appending them.
-
-#### 2. Windsurf (.windsurfrules)
-Similar to Cursor, paste the rules into your `.windsurfrules` file.
-
-#### 3. Cline / Claude Code / GitHub Copilot
-You can copy the rules into the "Custom Instructions" or "System Prompt" settings of these extensions/tools.
-
-#### 4. Project-Specific
-You can keep a `docs/skills` folder in your project and instruct the agent to "Read and follow the rules in docs/skills/ before starting any task."
+### Knowledge Map (30 Pillars)
+1. **Core Engineering**: Clean Code, SOLID, DRY, KISS, YAGNI, SoC.
+2. **Architecture**: Monolithic, Microservices, Modular, Layered, DDD.
+3. **Design Patterns**: Creational, Structural, Behavioral.
+4. **Quality Attributes**: Performance, Scalability, Reliability, Availability, Maintainability.
+5. **Security**: OWASP, Zero Trust, Encryption, RBAC/ABAC, Secrets Management.
+6. **Testing**: Unit, Integration, E2E, Performance, TDD/BDD.
+7. **DevOps**: CI/CD, Git Flow, Docker/K8s, Monitoring (LMA).
+8. **Data & DB**: Normalization, ACID, Sharding, Replication, Caching.
+9. **Advanced Logic**: Code Smells, Refactoring, Profiling, Concurrency (Async/Parallel).
+10. **Distributed Systems**: CAP Theorem, Saga, Event-Sourcing, CQRS, Pub/Sub.
+11. **API Design**: REST, GraphQL, gRPC, Idempotency, Versioning.
+12. **Thinking Models**: Trade-offs, Build vs Buy, First Principles, TCO.
+13. **Enterprise Production**: Multi-tenancy, Feature Flags, Blue/Green, Canary, Rollbacks.
+14. **Specialized Domains**: Robotics, Quantum, Aerospace, Fintech, E-commerce, etc.
 
 ---
 
 ## العربية
-
-### نظرة عامة
-يحتوي هذا المستودع على مجموعة شاملة من **القواعد الصارمة** و **المهارات الخبيرة** لوكلاء الذكاء الاصطناعي المستخدمين في بيئات التطوير الحديثة (Cursor, Windsurf, Claude Code, Cline، إلخ). تم تصميم هذه المهارات لفرض معايير عالية في هندسة البرمجيات، المعمارية، الأمن، ومنطق الأعمال.
+هذه الموسوعة هي مجموعة عالمية من **القواعد الصارمة** و **المهارات الهندسية الخبيرة** المصممة لبيئات العمل الضخمة (Enterprise). تتبع الموسوعة خارطة معرفية مكونة من 30 ركيزة تغطي كل شيء من الهندسة الأساسية إلى الأنظمة الموزعة المتقدمة والتفكير الاستراتيجي للأعمال.
 
 ### كيفية الاستخدام
-اعتماداً على الأداة التي تستخدمها، يمكنك تطبيق هذه المهارات بطرق مختلفة:
-
-#### 1. برنامج Cursor (.cursorrules)
-قم بنسخ محتوى ملفات الـ `.md` ذات الصلة إلى ملف `.cursorrules` في المجلد الرئيسي لمشروعك. يمكنك دمج عدة مهارات عن طريق إضافتها تباعاً.
-
-#### 2. برنامج Windsurf (.windsurfrules)
-مشابه لـ Cursor، قم بلصق القواعد في ملف `.windsurfrules`.
-
-#### 3. Cline / Claude Code / GitHub Copilot
-يمكنك نسخ القواعد في إعدادات "Custom Instructions" أو "System Prompt" الخاصة بهذه الإضافات أو الأدوات.
-
-#### 4. مهارات خاصة بالمشروع
-يمكنك الاحتفاظ بمجلد `docs/skills` في مشروعك وتوجيه الوكيل بـ "اقرأ واتبع القواعد الموجودة في docs/skills/ قبل البدء بأي مهمة."
+قم بنسخ محتويات ملفات الـ `.md` ذات الصلة إلى إعدادات القواعد في بيئة التطوير الخاصة بك (مثل `.cursorrules` أو `.windsurfrules`) أو في الـ System Prompt.
 
 ---
 
 ## Directory Structure | هيكل المجلدات
-- `skills/core`: General engineering principles | مبادئ الهندسة العامة
-- `skills/languages`: Language-specific strict rules | قواعد صارمة لكل لغة برمجة
-- `skills/security`: Security and vulnerability prevention | الأمن والوقاية من الثغرات
-- `skills/architecture`: System design and patterns | تصميم الأنظمة والأنماط
-- `skills/api`: API design and communication | تصميم الـ API والاتصالات
-- `skills/devops`: CI/CD and infrastructure | العمليات والبنية التحتية
-- `skills/business`: Requirements and project management | المتطلبات وإدارة المشاريع
-- `skills/engineering`: General engineering practices | ممارسات هندسية عامة
-- `skills/frontend`: Frontend best practices | أفضل ممارسات الواجهات الأمامية
-- `skills/backend`: Backend best practices | أفضل ممارسات الأنظمة الخلفية
-- `skills/ai_ml`: AI and Machine Learning practices | ممارسات الذكاء الاصطناعي
+- `skills/core_engineering`: Base principles and programming languages.
+- `skills/architecture_design`: System design, frontend/backend architecture, and patterns.
+- `skills/quality_performance`: Quality attributes and deep optimization.
+- `skills/distributed_systems`: Distributed theory, messaging, and complex patterns.
+- `skills/security_compliance`: Advanced security, zero trust, and data privacy.
+- `skills/api_integration`: API engineering, protocols, and reliable integration.
+- `skills/data_engineering`: Database design, AI/ML, and data streaming.
+- `skills/devops_observability`: Platform engineering, cloud, and observability.
+- `skills/process_management`: SDLC, Agile, and technical leadership.
+- `skills/thinking_models_enterprise`: Strategic thinking, startup growth, and enterprise concerns.
