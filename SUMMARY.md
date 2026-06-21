@@ -10,6 +10,7 @@ This inventory provides a quick overview of all the specialized skill files avai
    - Technical Writing
    - Git Standards (Version Control)
    - Productivity & Soft Skills
+   - Sustainable & Green Engineering
 2. **Languages**
    - Python, TypeScript, Go, Rust, Java, C#, C/C++ (Embedded), Hardware Design (Verilog/VHDL)
 3. **Security & Compliance**
@@ -33,6 +34,7 @@ This inventory provides a quick overview of all the specialized skill files avai
    - Docker & Kubernetes (Containerization)
    - Infrastructure as Code (IaC)
    - Networking & Protocols
+   - Systems Programming (Kernels & Compilers)
 6. **Data & AI**
    - Data Engineering
    - Real-time Data Streaming (Kafka/Spark)
@@ -41,6 +43,7 @@ This inventory provides a quick overview of all the specialized skill files avai
    - Computer Vision
    - NLP & LLM Engineering
    - Ethical AI & AI Safety
+   - Bioinformatics & Health Tech
 7. **Specialized & Emerging Domains**
    - Mobile Development
    - Blockchain & Smart Contracts
@@ -51,6 +54,8 @@ This inventory provides a quick overview of all the specialized skill files avai
    - Quantum Computing
    - Fintech Engineering
    - E-commerce Standards
+   - AR/VR & Metaverse
+   - Aerospace & Aviation Software
 8. **Management, Business & QA**
    - Engineering Management
    - Product Management & Agile
@@ -69,6 +74,7 @@ This inventory provides a quick overview of all the specialized skill files avai
    - الكتابة التقنية
    - معايير Git (إدارة النسخ)
    - الإنتاجية والمهارات الناعمة
+   - الهندسة المستدامة والخضراء
 2. **اللغات**
    - بايثون، تيب سكريبت، جو، رست، جافا، سي شارب، سي/سي++ (المدمجة)، تصميم الأجهزة (Verilog/VHDL)
 3. **الأمن والامتثال**
@@ -92,6 +98,7 @@ This inventory provides a quick overview of all the specialized skill files avai
    - دوكر وكوبيرنيتيس (الحاويات)
    - البنية التحتية كشيفرة (IaC)
    - الشبكات والبروتوكولات
+   - برمجة الأنظمة (النواة والمترجمات)
 6. **البيانات والذكاء الاصطناعي**
    - هندسة البيانات
    - تدفق البيانات اللحظي (Kafka/Spark)
@@ -100,6 +107,7 @@ This inventory provides a quick overview of all the specialized skill files avai
    - رؤية الحاسوب (Computer Vision)
    - هندسة الـ NLP والنماذج اللغوية
    - أخلاقيات وأمان الذكاء الاصطناعي
+   - المعلوماتية الحيوية والتقنيات الصحية
 7. **المجالات المتخصصة والناشئة**
    - تطوير تطبيقات الجوال
    - البلوكشين والعقود الذكية
@@ -110,6 +118,8 @@ This inventory provides a quick overview of all the specialized skill files avai
    - الحوسبة الكمومية
    - التقنيات المالية (Fintech)
    - معايير التجارة الإلكترونية
+   - الواقع المعزز والافتراضي
+   - برمجيات الطيران والفضاء
 8. **الإدارة، الأعمال وضمان الجودة**
    - الإدارة الهندسية
    - إدارة المنتجات وأجايل
