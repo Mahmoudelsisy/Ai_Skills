@@ -1,28 +1,44 @@
-# Real-World Distributed Systems Mastery | احتراف الأنظمة الموزعة في العالم الحقيقي
+# Advanced Distributed Systems & Mastery | احتراف الأنظمة الموزعة المتقدمة
 
 ## Arabic Description | وصف بالعربية
-قواعد هندسية متقدمة للتعامل مع المشاكل الحقيقية في الأنظمة الموزعة. تغطي القواعد حالات الفشل الجزئي، انقسام الشبكة (Network Partitions)، انحراف الساعة (Clock Drift)، ومشكلة "الدماغ المنقسم" (Split Brain)، مع تطبيق استراتيجيات اتساق البيانات المتقدمة.
+قواعد هندسية من مستوى النخبة للأنظمة الموزعة. يركز هذا الملف على حل المشاكل الحقيقية (Real-world problems) مثل Clock Drift و Network Partitions، مع جداول مفاضلة شاملة وأطر لاتخاذ القرار وسيناريوهات الفشل المعقدة.
+
+---
+
+## Decision Framework: Consistency Model
+| Model | Pros | Cons | When to Use |
+|---|---|---|---|
+| Strong Consistency | No data anomalies, simple logic | High latency, low availability | Financial transactions, critical metadata |
+| Eventual Consistency | High availability, low latency | Stale reads, complex conflict resolution | Social media feeds, analytics, profiles |
+| Causal Consistency | Better user experience (monotonic) | Performance overhead for tracking | Chat apps, comment threads |
 
 ---
 
 ## Strict Rules | قواعد صارمة
 
-### 1. Handling Real-World Failures
-- **Partial Failure Awareness**: NEVER assume all parts of a distributed system are up. Design for "Degraded Mode" where some services are unavailable.
-- **Network Partition Resilience**: Use consensus algorithms (Raft, Paxos) or appropriate coordination tools (Etcd, Consul) to handle network partitions and prevent **Split Brain** scenarios.
+### 1. Resilience & Reliability
+- **Transactional Outbox**: ALWAYS use the Outbox pattern when a database update MUST trigger an external event. Never use dual-writes without an atomic boundary.
+- **Idempotency Everywhere**: EVERY distributed API and message consumer MUST be idempotent. Support `Idempotency-Key` or unique event IDs.
 
-### 2. Time & Consistency Challenges
-- **Clock Drift Mitigation**: NEVER rely on local system time for ordering events across servers. Use Logical Clocks (Lamport, Vector Clocks) or Hybrid Logical Clocks (HLC).
-- **Inconsistency Management**: Identify where "Read-after-write" consistency is critical and where "Eventual Consistency" is acceptable.
+### 2. Time & Ordering
+- **Clock Drift**: NEVER trust system time for ordering events across different servers. Use Logical Clocks (Lamport) or Hybrid Logical Clocks (HLC).
+- **Consensus**: Use established consensus algorithms (Raft/Paxos) via tools like Etcd or Consul for critical shared state.
 
-### 3. Advanced Consistency Patterns
-- **Transactional Outbox Pattern**: ALWAYS use the Outbox pattern when updating a database and publishing an event simultaneously to ensure atomicity and prevent data loss.
-- **Saga Pattern (Advanced)**: Use Sagas to manage complex, multi-step distributed transactions with clear compensating actions for every step.
+### 3. Traffic Control
+- **Load Shedding**: Implement adaptive load shedding at the entry point. Reject non-critical traffic when system health (CPU/Memory/Latency) is degraded.
+- **Backpressure**: Propagate pressure signals upstream. If a consumer is slow, the producer MUST slow down or buffer limitedly.
 
-### 4. Data Sync & Reliability
-- **Idempotency Everywhere**: All distributed operations MUST be idempotent to handle duplicate deliveries caused by retries.
-- **Backpressure & Load Shedding**: Implement backpressure to prevent cascading failures. Use Load Shedding to reject requests when the system is near capacity to protect core stability.
+---
 
-### 5. Distributed State
-- **Lease & Locking**: Use leases for distributed locking to avoid deadlocks in case of client failure.
-- **Quorum-based Decisions**: For critical state changes, require a quorum (N/2 + 1) of nodes to agree before committing.
+## Failure Scenarios: Real-World Issues
+1. **Scenario**: Network Partition between two data centers (Split Brain).
+   - **Handling**: Quorum-based writes MUST fail if a majority is not reached. Read-only mode for the minority partition.
+2. **Scenario**: Consumer group lag in Kafka increases significantly.
+   - **Handling**: Automated alerts MUST trigger. Scale consumer count if CPU permits; otherwise, identify and fix the processing bottleneck (e.g., slow DB query).
+
+---
+
+## Production Checkpoints
+- [ ] Is every distributed transaction wrapped in a Saga or compensated correctly?
+- [ ] Are all external calls protected by a Circuit Breaker with a tested fallback?
+- [ ] Do we have visibility into end-to-end trace IDs across all services?

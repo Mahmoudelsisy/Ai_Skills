@@ -1,29 +1,41 @@
-# Strategic API Evolution & Governance | تطور الـ API الاستراتيجي والحوكمة
+# Expert API Engineering & Decision System | هندسة الـ API ونظام اتخاذ القرار
 
 ## Arabic Description | وصف بالعربية
-قواعد هندسية متقدمة لحوكمة وتطور الـ APIs في المؤسسات الكبرى. تركز القواعد على استقرار العقود البرمجية (Contracts)، استراتيجيات إيقاف الإصدارات (Deprecation)، والحفاظ على التوافقية مع الأنظمة القديمة.
+قواعد هندسية متقدمة لتصميم الـ APIs. يتضمن هذا الملف نظام اتخاذ القرار لتطوير العقود البرمجية، مع جداول مفاضلة شاملة وسيناريوهات فشل وكيفية التعامل مع تطور النظام دون كسر التوافقية.
+
+---
+
+## Decision Framework: API Versioning
+| Strategy | Pros | Cons | When to Use |
+|---|---|---|---|
+| URL Versioning | Explicit, easy to cache | Breaking changes require new URLs | Most public APIs |
+| Header Versioning | Cleaner URLs, flexible | Harder to test in browser | Enterprise internal APIs |
+| Content Negotiation | Most standard compliant | Highly complex for clients | Versioning media types only |
 
 ---
 
 ## Strict Rules | قواعد صارمة
 
-### 1. API Contract Stability
-- **Contract-First Design**: Use OpenAPI or AsyncAPI to define the contract BEFORE any code is written. The contract is the "Source of Truth."
-- **Backward Compatibility**: NEVER break a published API contract in a minor or patch version. Use automated contract testing (e.g., Prism, Dredd) to verify compatibility.
+### 1. Contract & Stability
+- **Schema-First**: Define API contracts using OpenAPI/AsyncAPI before implementation.
+- **Strict Backward Compatibility**: NEVER remove a field or change a type in a non-major version.
+- **Sunset Policy**: Use `Sunset` headers to notify clients of upcoming deprecations.
 
-### 2. Sophisticated Deprecation Strategy
-- **Deprecation Policy**: Clearly define and document the lifecycle of every API.
-- **Sunset Headers**: Use the `Sunset` HTTP header to notify clients of exact dates when an API version will be turned off.
-- **Migration Paths**: ALWAYS provide a clear migration guide and automated tools/scripts where possible when deprecating an API.
+### 2. Integration Resilience
+- **Idempotency Keys**: MANDATORY for all state-changing operations (POST/PATCH/PUT).
+- **Webhooks Reliability**: Use a reliable message queue for outgoing webhooks with exponential backoff retries.
 
-### 3. API Governance & Consistency
-- **Design Review Board**: Major API changes SHOULD go through a design review to ensure consistency across the entire organization's API ecosystem.
-- **Standardized Error Schemas**: Use a unified error format (e.g., RFC 7807 - Problem Details for HTTP APIs) across all services.
+---
 
-### 4. Integration Integrity
-- **Idempotency Keys**: MANDATORY for all transactional and state-changing endpoints.
-- **Schema Validation**: Strictly validate all incoming and outgoing payloads against the defined schema at the gateway level.
+## Failure Scenarios: API Issues
+1. **Scenario**: A client sends a massive request payload that exhausts server memory.
+   - **Handling**: Implement strict request body size limits at the gateway level. Use streaming parsers where possible.
+2. **Scenario**: An API version is deprecated, but a high-value client hasn't migrated.
+   - **Handling**: Use "Shadow Mirroring" to monitor usage. Implement "Virtual Sunset" (artificial errors for small % of traffic) to force attention before final cutoff.
 
-### 5. Advanced Monitoring
-- **Version Usage Tracking**: Track usage metrics per API version. Identify "sticky" clients who haven't migrated from deprecated versions.
-- **Latency by Client**: Monitor P99 latency per client/consumer to identify specific integration issues.
+---
+
+## Production Checkpoints
+- [ ] Is there a machine-readable schema (OpenAPI) available?
+- [ ] Are rate limits configured based on client priority/tiers?
+- [ ] Is HMAC signature verification enabled for all Webhooks?
